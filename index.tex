@@ -1,6 +1,8 @@
 \documentclass[12pt,a4paper,bibliography=totocnumbered,listof=totocnumbered]{scrartcl}
 \usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -43,6 +45,18 @@
 	colorlinks=true,linkcolor=black,citecolor=black,filecolor=magenta,urlcolor=black}
 \pdfinfo{/CreationDate (D:20110620133321)}
 
+% Paragraph soll das neue subsubsubsection werden
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+
+
 \begin{document}
 
 \titlespacing{\section}{0pt}{12pt plus 4pt minus 2pt}{-6pt plus 2pt minus 2pt}
@@ -70,11 +84,10 @@
 % ----------------------------------------------------------------------------------------------------------
 \thispagestyle{empty}
 \begin{center}
-	\includegraphics[scale=1]{Bilder/hs_os.png}\\
+	\includegraphics[scale=.3]{Bilder/640px-Uni_Bonn.png}\\
 	\vspace*{2cm}
 	\Large
-	\textbf{Fakultät}\\
-	\textbf{Ingenieurwissenschaften und Informatik}\\
+	\textbf{Landwirtschaftliche Fakultät}\\
 	\vspace*{2cm}
 	\Huge
 	\textbf{Abschlussarbeit}\\
@@ -82,7 +95,7 @@
 	\large
 	über das Thema\\
 	\vspace*{1cm}
-	\textbf{Beispiel für eine Abschlussarbeit}\\
+	\textbf{Möglichkeiten und Grenzen von computergestützten Ernährungserhebungsmethoden}\\
 	\vspace*{2cm}
 	
 	\vfill
@@ -90,7 +103,7 @@
 	\newcolumntype{x}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}p{#1}}
 	\begin{tabular}{x{6cm}p{7.5cm}}
 		\rule{0mm}{5ex}\textbf{Autor:} & Lisa Düpre\\ 
-		\rule{0mm}{5ex}\textbf{Prüfer:} & Prof. Dr. Piep \\ 
+		\rule{0mm}{5ex}\textbf{Prüfer:} & Prof. Dr. Monika Hartmann \\ 
 		\rule{0mm}{5ex}\textbf{Abgabedatum:} & 01.01.2013 \\ 
 	\end{tabular} 
 \end{center}
@@ -158,9 +171,9 @@
 \setcounter{page}{1}
 
 % ---------------------------- Hier kannst Du die Kapitel einfügen ---------------------
-\input{Kapitel01}
-\input{Kapitel02}
-\input{Kapitel03}
+\input{Einleitung}
+\input{Hauptteil}
+\input{Diskussion}
 \input{AnhangBib}
 
 
