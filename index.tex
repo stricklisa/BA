@@ -109,7 +109,7 @@
 \end{center}
 \pagebreak
 
-\input{Abstract}
+
 
 % ----------------------------------------------------------------------------------------------------------
 % Verzeichnisse
@@ -123,20 +123,22 @@
 \titlespacing{\section}{0pt}{12pt plus 4pt minus 2pt}{2pt plus 2pt minus 2pt}
 \singlespacing
 \rhead{INHALTSVERZEICHNIS}
-\renewcommand{\contentsname}{II Inhaltsverzeichnis}
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
 \phantomsection
-\addcontentsline{toc}{section}{\texorpdfstring{II \hspace{0.35em}Inhaltsverzeichnis}{Inhaltsverzeichnis}}
-\addtocounter{section}{1}
+%\addcontentsline{toc}{section}{\texorpdfstring{I \hspace{0.35em}Inhaltsverzeichnis}{Inhaltsverzeichnis}}
+%\addtocounter{section}{1}
 \tableofcontents
 \pagebreak
 \rhead{VERZEICHNISSE}
 \listoffigures
 \pagebreak
-\listoftables
+
+% bei Bedarf eines Tabellenverzeichnis wieder reinnehmen
+%\listoftables
 %\pagebreak
-\renewcommand{\lstlistlistingname}{Listing-Verzeichnis}
-{\labelsep2cm\lstlistoflistings}
-\pagebreak
+%\renewcommand{\lstlistlistingname}{Listing-Verzeichnis}
+%{\labelsep2cm\lstlistoflistings}
+%\pagebreak
 
 % ----------------------------------------------------------------------------------------------------------
 % Abkürzungen
@@ -172,6 +174,7 @@
 
 % ---------------------------- Hier kannst Du die Kapitel einfügen ---------------------
 \input{Einleitung}
+\pagebreak
 \input{Hauptteil}
 \input{Diskussion}
 \input{AnhangBib}
