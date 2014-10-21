@@ -25,6 +25,15 @@
 \usepackage{picins}
 \usepackage[subfigure,titles]{tocloft}
 \usepackage[pdfpagelabels=true]{hyperref}
+\usepackage[singlelinecheck=false]{caption}
+\usepackage{times}
+
+% word mäßiger Zeilenabstand 
+\usepackage{setspace}
+\newcommand{\MSonehalfspacing}{
+    \setstretch {1.902}
+}
+\MSonehalfspacing
 
 \usepackage{listings}
 \lstset{basicstyle=\footnotesize, captionpos=b, breaklines=true, showstringspaces=false, tabsize=2, frame=lines, numbers=left, numberstyle=\tiny, xleftmargin=2em, framexleftmargin=2em}
@@ -32,7 +41,7 @@
 \def\l@lstlisting#1#2{\@dottedtocline{1}{0em}{1em}{\hspace{1,5em} Lst. #1}{#2}}
 \makeatother
 
-\geometry{a4paper, top=27mm, left=30mm, right=20mm, bottom=35mm, headsep=10mm, footskip=12mm}
+\geometry{a4paper, top=25mm, left=25mm, right=30mm, bottom=25mm, headsep=12mm, footskip=12mm}
 
 \hypersetup{unicode=false, pdftoolbar=true, pdfmenubar=true, pdffitwindow=false, pdfstartview={FitH},
 	pdftitle={Abschlussarbeit},
@@ -55,7 +64,15 @@
 \setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
 \setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
 
-
+% definiere subsubsusbsection !! ÖD 
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{-1.0ex }
+\renewcommand\paragraph{\subsubsubsection}
 
 \begin{document}
 
@@ -68,7 +85,7 @@
 \lhead{}
 \chead{}
 \rhead{\thesection\space\contentsname}
-\lfoot{Beispiel für eine Abschlussarbeit\newline auch mit langem Titel}
+%\lfoot{Möglichkeiten und Grenzen \newline computergestützter Ernährungserhebungsmethoden}
 \cfoot{}
 \rfoot{\ \linebreak Seite \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -84,17 +101,28 @@
 % ----------------------------------------------------------------------------------------------------------
 \thispagestyle{empty}
 \begin{center}
-	\includegraphics[scale=.3]{Bilder/640px-Uni_Bonn.png}\\
+	%\includegraphics[scale=.2]{Bilder/640px-Uni_Bonn.png}\\
 	\vspace*{2cm}
-	\Large
+          \normalsize
+	\textbf{RHEINISCHE FRIEDRICH – WILHELMS – UNIVERSITÄT BONN}\\
+	\vspace*{0.5cm}
+	\normalsize
 	\textbf{Landwirtschaftliche Fakultät}\\
 	\vspace*{2cm}
-	\Huge
-	\textbf{Abschlussarbeit}\\
+	\Large
+	\textbf{BACHELORARBEIT}\\
 	\vspace*{0.5cm}
 	\large
-	über das Thema\\
-	\vspace*{1cm}
+	im Rahmen des Bachelorstudiengangs\\
+           \vspace*{0.5cm}
+           \textbf{Ernährungs- und Lebensmittelwissenschaften}\\
+           \vspace*{0.5cm}
+	\large
+           zur Erlangung des Grades\\
+           \vspace*{0.5cm}
+           \textbf{"Bachelor of Science"}\\
+	\vspace*{2cm}
+           \Large
 	\textbf{Möglichkeiten und Grenzen von computergestützten Ernährungserhebungsmethoden}\\
 	\vspace*{2cm}
 	
@@ -102,9 +130,12 @@
 	\normalsize
 	\newcolumntype{x}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}p{#1}}
 	\begin{tabular}{x{6cm}p{7.5cm}}
-		\rule{0mm}{5ex}\textbf{Autor:} & Lisa Düpre\\ 
-		\rule{0mm}{5ex}\textbf{Prüfer:} & Prof. Dr. Monika Hartmann \\ 
-		\rule{0mm}{5ex}\textbf{Abgabedatum:} & 01.01.2013 \\ 
+		\rule{0mm}{5ex}Vorgelegt von:& Lisa Düpre\\\\ & 2477851\\ 
+                     \vspace*{1cm}
+                     \rule{0mm}{5ex}Vorgelegt am & 27.10.2014 \\ 
+		\rule{0mm}{5ex}\textbf{1. Prüfende/Prüfer:} & Prof. Dr. Monika Hartmann \\ 
+                     \rule{0mm}{5ex}\textbf{2. Prüfende/Prüfer:} & Dipl.oecotroph. Julia Haß \\ 
+		
 	\end{tabular} 
 \end{center}
 \pagebreak
@@ -131,10 +162,10 @@
 \pagebreak
 \rhead{VERZEICHNISSE}
 \listoffigures
-\pagebreak
+
 
 % bei Bedarf eines Tabellenverzeichnis wieder reinnehmen
-%\listoftables
+\listoftables
 %\pagebreak
 %\renewcommand{\lstlistlistingname}{Listing-Verzeichnis}
 %{\labelsep2cm\lstlistoflistings}
