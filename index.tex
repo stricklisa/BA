@@ -12,7 +12,7 @@
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage[right]{eurosym}
-\usepackage[printonlyused]{acronym}
+\usepackage{acronym}
 \usepackage{subfig}
 \usepackage{floatflt}
 \usepackage[usenames,dvipsnames]{color}
@@ -31,6 +31,7 @@
 \usepackage{pdflscape}
 \usepackage{pdfpages}
 \usepackage{titlesec,blindtext}
+
 
 % word mäßiger Zeilenabstand 
 \usepackage{setspace}
@@ -71,7 +72,6 @@
 
 \setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
 \setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
-
 
 \begin{document}
 
@@ -168,16 +168,33 @@
 %\pagebreak
 %\renewcommand{\lstlistlistingname}{Listing-Verzeichnis}
 %{\labelsep2cm\lstlistoflistings}
-%\pagebreak
+\pagebreak
 
 % ----------------------------------------------------------------------------------------------------------
 % Abkürzungen
 % ----------------------------------------------------------------------------------------------------------
+
 \section{Abkürzungsverzeichnis}
-\begin{acronym}[OSGi] % längste Abkürzung steht in eckigen Klammern
-	\setlength{\itemsep}{-\parsep} % geringerer Zeilenabstand
-	\acro{OSGi}{Open Service Gateway initiative}
+
+\begin{acronym}[LISAJERO] 
+%\setlength{\itemsep}{0.3\parsep}
+
+\acro{AMPM} {Automated Multiple Pass Method}
+\acro{ASA24}{Automated Self-Administered 24-hour Recall}
+\acro{DLW} {Doubly Labeled Water}
+\acro{DPFM} {Digital Photography of Foods Method} 
+\acro{EA} {Energieaufnahme}
+\acro{ENA} {Energie- und Nährstoffaufnahme} 
+\acro{MBK}{Mahlzeitenbasierte Kurzliste}
+\acro{mdFR} {Mobile Device Food Record} 
+\acro{MMM} 	{My Meal Mate}
+\acro{NHANES} {National Health and Nutrition Examination Survey}
+\acro{PDA}{Personal Digital Assistants}
+\acro{RFPM} {Remote Food Photography Method} 
+\acro{SMS}{Short Message Service}
+\acro{WHO} {World Health Organization}
 \end{acronym}
+
 \newpage
 
 % ----------------------------------------------------------------------------------------------------------
