@@ -30,11 +30,14 @@
 \usepackage{pdflscape}
 \usepackage{pdfpages}
 \usepackage{titlesec,blindtext}
-\usepackage[style=authortitle-icomp]{biblatex}
+\usepackage[style=authoryear,
+    sorting=nyt,
+    maxnames=19,
+    block=space]{biblatex}
 \DeclareNameAlias{sortname}{last-first}
 \DeclareNameAlias{default}{last-first}
 
-\usepackage[babel,german=guillemets]{csquotes}
+%\usepackage[babel,german=guillemets]{csquotes}
 \addbibresource{bibo.bib}
 
 % word mäßiger Zeilenabstand 
