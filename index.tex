@@ -66,12 +66,6 @@
 %\usepackage[babel,german=guillemets]{csquotes}
 \addbibresource{bibo.bib}
 
-% word mäßiger Zeilenabstand 
-\usepackage{setspace}
-\newcommand{\MSonehalfspacing}{
-    \setstretch {1.902}
-}
-\MSonehalfspacing
 
 \usepackage{listings}
 \lstset{basicstyle=\footnotesize, captionpos=b, breaklines=true, showstringspaces=false, tabsize=2, frame=lines, numbers=left, numberstyle=\tiny, xleftmargin=2em, framexleftmargin=2em}
@@ -111,6 +105,11 @@
 \titleformat*{\subsection}{\normalfont\bfseries\sffamily}
 \titleformat*{\subsubsection}{\normalfont\normalsize}
 
+% word mäßiger Zeilenabstand 
+\usepackage{setspace}
+\newcommand{\MSonehalfspacing}{
+    \setstretch {1.433}
+}
 
 \begin{document}
 
@@ -251,7 +250,11 @@
 \lhead{Kapitel \thesection}
 \rhead{\rightmark}
 
-\onehalfspacing
+%\onehalfspacing
+%\linespread{1.4}
+\MSonehalfspacing
+\selectfont
+
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\theHsection}{\arabic{section}}
 \setcounter{section}{0}
