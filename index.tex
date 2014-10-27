@@ -71,7 +71,7 @@
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
             {-2.5ex\@plus -1ex \@minus -.25ex}%
             {0.1px}%
-            {\normalfont\normalsize\bfseries}
+            {\normalfont\normalsize}
 }
 \makeatother
 \titlespacing{\paragraph}{0mm}{10pt}{1pt} % funktioniert bestens
@@ -79,6 +79,12 @@
 
 \setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
 \setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+
+\titleformat*{\section}{\large\bfseries\sffamily}
+\titleformat*{\subsection}{\normalfont\bfseries\sffamily}
+\titleformat*{\subsubsection}{\normalfont\normalsize}
+
 
 \begin{document}
 
