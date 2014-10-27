@@ -33,9 +33,35 @@
 \usepackage[style=authoryear,
     sorting=nyt,
     maxnames=19,
+    firstinits,
     block=space]{biblatex}
 \DeclareNameAlias{sortname}{last-first}
 \DeclareNameAlias{default}{last-first}
+\defbibheading{bibintoc}[\bibname]{%
+               \chapter*{#1}%
+               \markboth{#1}{#1}}
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+% Doppelpunkt nach Jahr
+\renewcommand{\labelnamepunct}{\addcolon\space}
+% Kapitälchen
+\renewcommand*{\mkbibnamelast}[1]{\textsc{#1}}
+% new URI font
+\appto{\biburlsetup}{\renewcommand*{\UrlFont}{\normalfont}}
+%Remove "and" before last name. However, this also removes "and" in a textcite...
+\renewcommand*{\finalnamedelim}{\addsemicolon\space}
+\DeclareFieldFormat[inbook,thesis]{title}{#1\addperiod} % italic title with period
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+%  \setunit*{\adddot}% DELETED
+  \setunit*{\addnbspace}% NEW (optional); there's also \addnbthinspace
+  \printfield{number}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+
+               
+               
+
 
 %\usepackage[babel,german=guillemets]{csquotes}
 \addbibresource{bibo.bib}
